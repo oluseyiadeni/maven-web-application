@@ -8,7 +8,7 @@ node{
     //bat "${mavenHome}/bin/mvn clean package"
   }
   stage('3codeQuality'){
-    sh "${mavenHome}/bin/mvn  sonar:sonar"
+    sh "${mavenHome}/bin/mvn sonar:sonar"
   }
   stage('4uploadArtifacts'){
     //sh "${mavenHome}/bin/mvn deploy"
