@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://44.200.20.4:9000/</sonar.host.url>
+		<sonar.host.url>http://44.192.41.9:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>Kim@123</sonar.password>  
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,7 +95,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.234.226.47:8081/repository/tesla-app-releases/</url>
+	      <url>http://3.239.182.231:8081/repository/tesla-apps-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
