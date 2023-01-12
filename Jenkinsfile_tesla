@@ -19,7 +19,7 @@ node{
   } 
   stage('5deploy2UAT'){
     sh "echo 'deploy to UAT'  "
-    deploy adapters: [tomcat9(credentialsId: 'tomcat-credencial', path: '', url: 'http://18.207.208.85:8080/')], contextPath: null, war: 'target/*war'
+   deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://3.89.23.23:8080/')], contextPath: null, war: 'target/*war'
   }
   stage('6approvalGate'){
     sh "echo 'ready for review' "
@@ -28,8 +28,8 @@ node{
       }
   }
   stage('7deploy2Prod'){
-   sh "sleep  50" 
-   deploy adapters: [tomcat9(credentialsId: 'tomcat-credencial', path: '', url: 'http://18.207.208.85:8080/')], contextPath: null, war: 'target/*war'
+   sh "sleep  10" 
+  deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://3.89.23.23:8080/')], contextPath: null, war: 'target/*war'
   }
   stage('8emailNotification'){
     emailext body: '''Hi All,
