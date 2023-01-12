@@ -29,7 +29,7 @@ node{
   }
   stage('7deploy2Prod'){
    sh "sleep  10" 
-  deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://3.89.23.23:8080/')], contextPath: null, war: 'target/*war'
+  //deploy adapters: [tomcat9(credentialsId: 'tomcat-credencials', path: '', url: 'http://3.89.23.23:8080/')], contextPath: null, war: 'target/*war'
   }
   stage('8emailNotification'){
     emailext body: '''Hi All,
