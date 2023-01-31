@@ -1,13 +1,13 @@
 pipeline{
   agent any 
   tools{
-    maven "maven3.8.4"
+    maven "maven3.8.7"
   }
   stages{
     stage('GitClone'){
       steps{
         echo "cloning the lastest applications version"
-        git "https://github.com/LandmakTechnology/maven-web-application"
+        git "https://github.com/oluseyiadeni/maven-web-application"
       }
     }
       stage('Test+Build'){
@@ -34,20 +34,21 @@ pipeline{
       stage('predeployment'){
       steps{
         sh "echo creating docker image"
-        sh "docker build -t mylandmarktech/maven-web-app . "
-        sh "docker push mylandmarktech/maven-web-app"
+        sh "docker build -t bigfish8910/app:6 . "
+        sh "docker push bigfish8910/app:6"
       }
-    }
-    stage('UnDeploy'){
+      }
+        stage('UnDeploy'){
       steps{
         sh "echo UNDEPLOYING existing application"
         sh "docker rm -f webapp"
       }
     }
+    
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
-        sh "docker run -d -p 8000:8080 --name webapp mylandmarktech/maven-web-app"
+        sh "docker run --name webapp -d -p 7000:8080  bigfish8910/app:5"
       }
     }
   stage('emailNotification'){
@@ -55,6 +56,7 @@ pipeline{
       sh "echo deployment successful"
     }
   }
+}
 
-  }
+  
 }
